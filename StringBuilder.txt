@@ -1,0 +1,38 @@
+Consider a scenario, where we have to modify the variable name = "Oliver" to "Oliver Carter". To implement this we will use concat method as shown below.
+----------------------------------------------------
+String name = "Oliver";
+name.concat(" Carter");
+System.out.println(name);  //Output Oliver
+----------------------------------------------------
+In the above example, we have string "Oliver" referred by the variable name. 
+Even after using concat, name("Oliver") is not changed, rather a new object is created "Oliver Carter" ,having no reference. 
+This is because String in Java is immutable. Immutable means which cannot be changed. 
+----------------------------------------------------
+To solve this we will use a mutable class known as StringBuilder. 
+StringBuilder class consists of the append method that concatenates the string with the specified argument which might solve our problem. 
+Let's learn more about StringBuilder Class.
+
+StringBuilder Class
+StringBuilder Objects are similar to String objects but they can be modified hence they are immutable. 
+This means if we try to modify the original string, a new string will not be generated instead original string will get changed. 
+In one way we can say that StringBuilder will reduce memory usage. It provides an alternative to the String class, it is mutable and easy to use.
+
+--------------------------------------------------------
+//create StringBuilder object
+StringBuilder name = new StringBuilder();
+name.append("Oliver");
+name.append(" Carter");
+System.out.println(name);   //Output: Oliver Carter
+---------------------------------------------------------
+//creation of StringBuilder Object with capacity 50.
+StringBuilder name = new StringBuilder(50);
+				
+name.append("Mississippi");
+int length = name.length();  // will give the length of address
+name.insert(length, " River");
+System.out.println(name);   //Output :- Mississippi River
+		
+name.reverse();    // Output :- reviR ippississiM
+name.delete(5, 10); // Output :- reviRssissiM
+System.out.println(name.charAt(3));  // Output :- i
+---------------------------------------------------------
